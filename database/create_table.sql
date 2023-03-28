@@ -54,7 +54,7 @@ CREATE TABLE comment (
   id bigint NOT NULL PRIMARY KEY auto_increment,
   content TEXT NOT NULL,
   user_id bigint NOT NULL,
-  new_id bigint NOT NULL,
+  news_id bigint NOT NULL,
   createddate TIMESTAMP NULL,
   modifieddate TIMESTAMP NULL,
   createdby VARCHAR(255) NULL,
@@ -62,7 +62,7 @@ CREATE TABLE comment (
 );
 
 ALTER TABLE comment ADD CONSTRAINT fk_comment_user FOREIGN KEY (user_id) REFERENCES user(id);
-ALTER TABLE comment ADD CONSTRAINT fk_comment_news FOREIGN KEY (new_id) REFERENCES news(id);
+ALTER TABLE comment ADD CONSTRAINT fk_comment_news FOREIGN KEY (news_id) REFERENCES news(id);
 
 
 
